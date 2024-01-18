@@ -74,9 +74,8 @@ class PeriodicFunctionVisualiser_RealTime(FunctionVisualiser_RealTime):
             if abs(values[-1] - values[0]) < self.tolerance:
                 self.periodic_count += 1
                 if self.periodic_count == 2:
+                    self.periodic_count = 0
                     return True
-            else:
-                self.periodic_count = 0
         return False
 
     def main(self):
@@ -105,7 +104,7 @@ def my_function2(t):
     return t
 
 
-a, b = 3 , 5  # Set the visualisation time interval [a, b]
+a, b = 0 , 5  # Set the visualisation time interval [a, b]
 
 ## Uncomment a visualiser of your choice
 
